@@ -69,7 +69,12 @@ document.querySelector('#ADD').addEventListener("click",(e)=>{
     count++
 
     // Storing INside local Storage
-    localStorage.setItem(uName.value,email.value)
+    let appintMent={
+        name:uName.value,
+        value:email.value
+    }
+    localStorage.setItem(count-1,JSON.stringify(appintMent))
+
 })
 
 
