@@ -70,6 +70,7 @@ document.querySelector('#ADD').addEventListener("click",(e)=>{
 
     // Storing INside local Storage
     let appintMent={
+        serialNumber:count-1,
         name:uName.value,
         value:email.value
     }
