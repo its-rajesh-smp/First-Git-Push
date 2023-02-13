@@ -22,6 +22,9 @@
             background-color: rgb(207, 210, 210);
             border: 2px solid rebeccapurple;
         }
+        .search.btn:hover{
+            background-color: #b0dbf4;
+        }
     </style>
 </head>
 
@@ -34,8 +37,9 @@
     </div>
 
     <div class="container">
+        <div style="display:flex ; align-items: flex-end;">
         <form class="my_form">
-            <div>
+            <div style="display: flex; gap: 10px;">
                 <div class="form-floating mt-3">
                     <input type="text" class="form-control name" placeholder="Name" />
                     <label class="form-check" for="firstName">Name</label>
@@ -47,16 +51,23 @@
             </div>
         </form>
 
+        <div>
+            <div class="mx-2" style="color: #292929b8;">Search Patient's Name</div>
+            <div class="mx-2" style="display: flex; align-items: center; justify-content: center;">
+                <input id="search" type="text" class="form-control form-control-sm" placeholder="Search Here !" >
+                <button style="height: 31px;" class="btn btn-sm btn-light search mx-1"><img width="20px" src="https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/search-512.png" alt="" srcset=""></button>
+            </div>
+        </div>
+
+        </div>
+
         <div style="display: flex; justify-content: space-between">
             <div class="btn-group-vertical">
                 <button style="background-color: #128281" id="ADD" class="btn me-3 btn-primary mt-2">
                     Add
                 </button>
-                <button style="background-color: #128281" id="DEL" class="btn btn-primary mt-1">
-                    Del
-                </button>
             </div>
-            
+
             <div id="alert" style="visibility: hidden">
                 <h2 style="color: red">Some Fields Are Empty</h2>
             </div>
@@ -64,39 +75,97 @@
 
         <!-- HOVER HELP -->
 
-        
-        <div style="text-align: right;">
-            <small class="help" style="color:#128281 ;">Need Help</small>
+        <div style="text-align: right">
+            <small class="help" style="color: #128281">Need Help</small>
         </div>
 
-        <div style="display: none;" class="alert alert-info mt-3 " role="alert">Please call us :- <span style="color: #37b6ff;">+91 8942908195</span></div>
-        
-        
-        <!-- Lists -->
-        <div class="canvas" style="text-align: center">
-            <!-- Main Row -->
-            <div class="row mt-2" style="border: 1px solid gray">
-                <div class="col" style="background-color: #82dbbb; font-weight: 700">
-                    SL
-                </div>
-                <div class="col" style="background-color: #e3b847; font-weight: 700">
-                    Name
-                </div>
-                <div class="col" style="background-color: #62c3fa; font-weight: 700">
-                    Email
-                </div>
+        <div style="display: none" class="alert alert-info mt-3" role="alert">
+            <h1>Help! 24x7</h1>
+           <div>Please call us :- <span style="color: #37b6ff">+91 8942908195</span></div>
+           <div>Email :- <span style="color: #37b6ff">email@gmail.youtube.com</span></div>
+        </div>
+
+
+        <!--! Main Row -->
+        <div class="row mt-2" style="border: 1px solid gray;border-bottom: 2px solid black;text-align: center;user-select: none; ">
+            <div class="col" style="background-color: #e3b847; font-weight: 700">
+                Name
             </div>
+            <div class="col" style="background-color: #62c3fa; font-weight: 700">
+                Email
+            </div>
+            <div class="col" style="background-color: #82dbbb; font-weight: 700">
+                Modification
+            </div>
+        </div>
+
+
+
+        <!--! Lists -->
+        <div class="canvas">
 
             <!-- 1st Person -->
+            
+            <!-- <div class="row item" style="border: 1px solid black ;">
+                <div class="col d-inline-flex align-items-center justify-content-center" style="background-color: rgb(202, 177, 114)">Rajesh</div>
+                <div class="col d-inline-flex align-items-center justify-content-center" style="background-color: rgb(137, 184, 211)">
+                    rajesh@gmail.com
+                </div>
+                <div class="col d-inline-flex align-items-center justify-content-center" style="background-color: rgb(156, 213, 192)">
+                    
+                    <div class="btn-group btn-group-sm m-2 gap-1">
+                        
+                        <button  class="btn btn-sm btn-primary editBtn" >Edit</button> 
+                        <button  class="btn btn-sm btn-danger deleteBtn">X</button> 
+
+                    </div>
+
+                </div>
+            </div> -->
+
+
+
         </div>
         <div id="noPerson" style="
           text-align: center;
           color: rgba(0, 0, 0, 0.283);
           visibility: visible;
         ">
-            <h1>NO APPOINMENT</h1>
+            <h1 style="user-select: none;">NO MORE</h1>
         </div>
     </div>
+
+    <!--! MODAL -->
+    <!-- <button data-bs-toggle="modal" data-bs-target="#modal" >OPEN</button> -->
+    <div class="modal fade" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="display: flex; flex-direction: column; align-items: start;" >
+                    <h1>EDIT!</h1>
+                    <div id="modal_name">
+                        Rajesh                
+                    </div>
+                    <div id="modal_email">
+                        email@gmail.com                  
+                    </div>
+                </div>
+                <div class="modal-body">
+
+                    <div class="inpEdit">
+                        <input id="modal_inp_name" type="text" placeholder="Name">
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button  id="btn_modal_save">Save</button>
+                    <button  data-bs-dismiss="modal" data-bs-target="#modal" id="btn_modal_dismiss" >X</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 
 <script src="/script.js"></script>
